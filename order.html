@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food - FoodExpress</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-orange-500 text-white p-4">
+        <h1 class="text-3xl font-bold">
+            FoodExpress
+        </h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white">
+        <div class="flex justify-center gap-8 p-4">
+
+            <a href="index.html">Home</a>
+
+            <a href="restaurants.html">Restaurants</a>
+
+            <a href="menu.html">Menu</a>
+
+            <a href="order.html" class="text-orange-400 font-bold">
+                Order </a>
+
+                <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Order Form -->
+    <section class="max-w-lg mx-auto bg-white p-6 mt-10 rounded shadow-lg">
+
+        <h2 class="text-3xl font-bold text-center mb-6">
+            Place Your Order
+        </h2>
+
+        <form onsubmit="return validateForm()">
+
+            <!-- Name -->
+            <label class="block mb-2 font-semibold">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                class="w-full border p-2 rounded mb-4"
+                placeholder="Enter your name">
+
+            <!-- Phone -->
+            <label class="block mb-2 font-semibold">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                class="w-full border p-2 rounded mb-4"
+                placeholder="Enter your phone number">
+
+            <!-- Address -->
+            <label class="block mb-2 font-semibold">
+                Delivery Address
+            </label>
+
+            <textarea
+                id="address"
+                class="w-full border p-2 rounded mb-4"
+                rows="3"
+                placeholder="Enter your address"></textarea>
+
+            <!-- Location API -->
+            <label class="block mb-2 font-semibold">
+                Delivery Location
+            </label>
+
+            <button
+                type="button"
+                onclick="getLocation()"
+                class="bg-blue-500 text-white px-4 py-2 rounded mb-3">
+
+                Detect My Location
+
+            </button>
+
+            <p
+                id="location"
+                class="text-green-600 font-semibold mb-4">
+            </p>
+
+            <!-- Food Selection -->
+            <label class="block mb-2 font-semibold">
+                Select Food Item
+            </label>
+
+            <select
+                id="food"
+                class="w-full border p-2 rounded mb-4">
+
+                <option value="">
+                    Select Food
+                </option>
+
+                <option>Pizza</option>
+                <option>Burger</option>
+                <option>Biryani</option>
+                <option>Pasta</option>
+                <option>Dosa</option>
+                <option>Paneer Tikka</option>
+
+            </select>
+
+            <!-- Payment Method -->
+            <label class="block mb-2 font-semibold">
+                Payment Method
+            </label>
+
+            <select
+                id="payment"
+                class="w-full border p-2 rounded mb-6">
+
+                <option value="">
+                    Select Payment Method
+                </option>
+
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+
+            </select>
+
+            <!-- Submit -->
+            <button
+                type="submit"
+                class="bg-orange-500 text-white w-full py-3 rounded hover:bg-orange-600">
+
+                Place Order
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+        <p>
+            © 2026 FoodExpress. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function getLocation()
+        {
+            if (navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else
+            {
+                document.getElementById("location").innerText =
+                "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position)
+        {
+            document.getElementById("location").innerText =
+            "Latitude: " +
+            position.coords.latitude +
+            " | Longitude: " +
+            position.coords.longitude;
+        }
+
+        function validateForm()
+        {
+            let name =
+            document.getElementById("name").value;
+
+            let phone =
+            document.getElementById("phone").value;
+
+            let address =
+            document.getElementById("address").value;
+
+            let food =
+            document.getElementById("food").value;
+
+            let payment =
+            document.getElementById("payment").value;
+
+            if(name=="" ||
+               phone=="" ||
+               address=="" ||
+               food=="" ||
+               payment=="")
+            {
+                alert("Please fill all fields");
+                return false;
+            }
+
+            alert("Order Placed Successfully!");
+
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>

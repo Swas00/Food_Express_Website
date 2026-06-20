@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - FoodExpress</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-orange-500 text-white p-4">
+        <h1 class="text-3xl font-bold">
+            FoodExpress
+        </h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white">
+        <div class="flex justify-center gap-8 p-4">
+
+            <a href="index.html">Home</a>
+
+            <a href="restaurants.html">Restaurants</a>
+
+            <a href="menu.html" class="text-orange-400 font-bold">
+                Menu
+            </a>
+            <a href="order.html">
+                Order </a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="text-center py-10">
+        <h2 class="text-4xl font-bold">
+            Our Menu
+        </h2>
+
+        <p class="text-gray-600 mt-3">
+            Delicious food at affordable prices
+        </p>
+    </section>
+
+    <!-- Menu Table -->
+    <section class="max-w-4xl mx-auto p-6">
+
+        <table class="w-full border border-black bg-white">
+
+            <tr class="bg-orange-500 text-white">
+                <th class="border p-3">Food Item</th>
+                <th class="border p-3">Category</th>
+                <th class="border p-3">Price</th>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Pizza</td>
+                <td class="border p-3">Italian</td>
+                <td class="border p-3">₹299</td>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Burger</td>
+                <td class="border p-3">Fast Food</td>
+                <td class="border p-3">₹149</td>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Biryani</td>
+                <td class="border p-3">Indian</td>
+                <td class="border p-3">₹249</td>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Pasta</td>
+                <td class="border p-3">Italian</td>
+                <td class="border p-3">₹199</td>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Dosa</td>
+                <td class="border p-3">South Indian</td>
+                <td class="border p-3">₹99</td>
+            </tr>
+
+            <tr>
+                <td class="border p-3">Paneer Tikka</td>
+                <td class="border p-3">Indian</td>
+                <td class="border p-3">₹220</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Button -->
+    <section class="text-center mt-8">
+
+        <button
+            onclick="showMessage()"
+            class="bg-orange-500 text-white px-6 py-2 rounded">
+
+            Order Now
+
+        </button>
+
+        <p id="message" class="mt-4 text-green-600 font-bold"></p>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showMessage()
+        {
+            document.getElementById("message").innerText =
+            "Thank you for choosing FoodExpress!";
+        }
+
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+
+        <p>
+            © 2026 FoodExpress. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
